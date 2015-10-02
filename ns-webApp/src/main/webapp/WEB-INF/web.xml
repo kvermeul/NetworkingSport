@@ -5,9 +5,15 @@
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
   
-<!--   <listener> -->
-<!--         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class> -->
-<!--     </listener> -->
+  
+  <context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>/WEB-INF/spring/application-context.xml</param-value>
+	</context-param>
+  
+  <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
   
   <servlet>
       <servlet-name>SpringServlet</servlet-name>
@@ -23,7 +29,7 @@
    
    <servlet-mapping>
       <servlet-name>SpringServlet</servlet-name>
-      <url-pattern>/ns-webApp/*</url-pattern>
+      <url-pattern>/rest/*</url-pattern>
    </servlet-mapping>
    
    
