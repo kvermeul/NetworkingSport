@@ -10,10 +10,38 @@
   
   <properties>
   	<jettyVersion>9.3.3.v20150827</jettyVersion>
+  	<springVersion>4.2.1.RELEASE</springVersion>
   </properties>
   
   <dependencies>
   
+  	<!-- SPRING -->
+  	
+  	
+  	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-webmvc</artifactId>
+		<version>${springVersion}</version>
+	</dependency>
+
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-core</artifactId>
+		<version>${springVersion}</version>
+	</dependency>
+	<dependency>
+	<groupId>org.springframework</groupId>
+	 <artifactId>spring-context</artifactId>
+	 <version>${springVersion}</version>
+	</dependency>
+	
+	<dependency>
+	 <groupId>org.springframework</groupId>
+	 <artifactId>spring-beans</artifactId>
+	 <version>${springVersion}</version>
+	</dependency>
+
+  	<!-- End of Spring -->
   	<dependency>
       <groupId>org.eclipse.jetty</groupId>
       <artifactId>jetty-server</artifactId>
@@ -40,7 +68,15 @@
 		<artifactId>jetty-maven-plugin</artifactId>
         <version>${jettyVersion}</version>
       </plugin>
-  	</plugins>
-    <finalName>ns-webApp</finalName>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
+  </plugins>
+  <finalName>ns-webApp</finalName>
   </build>
 </project>
